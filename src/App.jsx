@@ -118,7 +118,7 @@ const HomeSection = () => {
                         <a href="#portfolio" className="btn inline-flex items-center gap-2 bg-transparent border-2 border-accent text-accent font-semibold px-6 py-3 rounded-lg hover:bg-accent hover:text-[#101C29] transition-colors">
                             <Briefcase size={20}/> Explore My Project
                         </a>
-                        <a href="/Portfolio Runnie.pdf" download="Portfolio - Kharisma Fahrun Nisa.pdf" className="btn inline-flex items-center gap-2 bg-accent text-[#101C29] font-semibold px-6 py-3 rounded-lg hover:bg-accent-dark transition-colors btn-shadow">
+                        <a href="/Portfolio_Kharisma Fahrun Nisa.pdf" download="Portfolio - Kharisma Fahrun Nisa.pdf" className="btn inline-flex items-center gap-2 bg-accent text-[#101C29] font-semibold px-6 py-3 rounded-lg hover:bg-accent-dark transition-colors btn-shadow">
                             <Download size={20}/> Download CV
                         </a>
                     </div>
