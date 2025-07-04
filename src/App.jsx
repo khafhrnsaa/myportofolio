@@ -3,7 +3,7 @@ import {
     Home, User, Briefcase, MessageSquareText, Mail, Linkedin, Github, Download, 
     ChevronRight, Menu, X, ArrowUp, Plus, Heart, Quote, Star, Code, Database, 
     GitBranch, Network, FileSearch, Monitor, BarChart2, Award, Phone, GraduationCap, 
-    UserCircle, Paperclip, Send, Building, Users, ShieldCheck
+    UserCircle, Paperclip, Send, Building, Users, ShieldCheck, MessageCircle
 } from 'lucide-react';
 
 // --- Data untuk Portfolio ---
@@ -43,7 +43,7 @@ const Header = ({ activeSection }) => {
 
     return (
         <header className="fixed top-0 left-0 w-full px-4 sm:px-8 md:px-16 py-4 flex justify-between items-center z-50 transition-shadow duration-300 bg-[#101C29] shadow-lg">
-            <a href="#home" class="text-2xl font-bold flex items-center gap-3"></a>
+            <a href="#home" className="text-2xl font-bold text-white"></a>
             {/* Desktop Nav */}
             <nav className="hidden md:flex space-x-2">
                 {navLinks.map(link => (
@@ -127,7 +127,7 @@ const HomeSection = () => {
                 </div>
                 <div className="flex justify-center items-center mt-8 md:mt-0">
                     <div className="relative w-3/4 md:w-full max-w-sm">
-                        <img src="profile.jpg" alt="Profile" className="rounded-full border-8 border-accent w-full h-auto object-cover aspect-square animate-float" />
+                        <img src="/profile.jpg" alt="Profile" className="rounded-full border-8 border-accent w-full h-auto object-cover aspect-square animate-float" />
                         <div className="floating-icon absolute top-5 -left-5 w-16 h-16 bg-[#0A1C3D] rounded-full flex items-center justify-center shadow-lg" style={{animationDelay: '0.2s'}}>
                             <Code size={36} className="text-yellow-400"/>
                         </div>
@@ -334,6 +334,22 @@ const ContactSection = ({ onSupportClick }) => (
                     </div>
                     <ChevronRight className="text-white"/>
                 </a>
+                {/* --- KARTU KONTAK BARU --- */}
+                <a href="mailto:gaharuearn@gmail.com" className="contact-card bg-[#0A1C3D] p-6 rounded-lg flex items-center justify-between transition-transform hover:-translate-y-1">
+                    <div>
+                        <h3 className="text-xl font-bold flex items-center gap-3 text-white"><Mail/> Email</h3>
+                        <p className="text-gray-400">Send me an email directly</p>
+                    </div>
+                    <ChevronRight className="text-white"/>
+                </a>
+                <a href="https://wa.me/6281239362587" target="_blank" rel="noopener noreferrer" className="contact-card bg-[#0A1C3D] p-6 rounded-lg flex items-center justify-between transition-transform hover:-translate-y-1">
+                    <div>
+                        <h3 className="text-xl font-bold flex items-center gap-3 text-white"><MessageCircle/> WhatsApp</h3>
+                        <p className="text-gray-400">Chat with me</p>
+                    </div>
+                    <ChevronRight className="text-white"/>
+                </a>
+                {/* --- AKHIR KARTU KONTAK BARU --- */}
             </div>
             <div id="contact-form" className="lg:col-span-2 bg-[#0A1C3D] p-8 rounded-lg">
                 <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 text-white"><Send/> Send Me a Message</h3>
