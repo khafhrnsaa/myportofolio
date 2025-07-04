@@ -118,7 +118,7 @@ const HomeSection = () => {
                         <a href="#portfolio" className="btn inline-flex items-center gap-2 bg-transparent border-2 border-accent text-accent font-semibold px-6 py-3 rounded-lg hover:bg-accent hover:text-[#101C29] transition-colors">
                             <Briefcase size={20}/> Explore My Project
                         </a>
-                        <a href="/Portofolio_Kharisma Fahrun Nisa.pdf" download="Portfolio - Kharisma Fahrun Nisa.pdf" className="btn inline-flex items-center gap-2 bg-accent text-[#101C29] font-semibold px-6 py-3 rounded-lg hover:bg-accent-dark transition-colors btn-shadow">
+                        <a href="/Portfolio Runnie_compressed.pdf" download="Portfolio - Kharisma Fahrun Nisa.pdf" className="btn inline-flex items-center gap-2 bg-accent text-[#101C29] font-semibold px-6 py-3 rounded-lg hover:bg-accent-dark transition-colors btn-shadow">
                             <Download size={20}/> Download CV
                         </a>
                     </div>
@@ -318,7 +318,7 @@ const DownloadPortfolioSection = () => (
             <div className="flex-grow text-center md:text-left">
                 <h3 className="text-2xl font-bold text-white flex items-center gap-3 mb-4"><FileText/> Portfolio Lengkap</h3>
                 <p className="text-gray-400 mb-6">Dapatkan versi PDF dari portofolio saya untuk referensi offline atau untuk dibagikan dengan tim Anda.</p>
-                <a href="/Portfolio Runnie.pdf" 
+                <a href="/Portfolio Runnie_compressed.pdf" 
                    download="Portfolio - Kharisma Fahrun Nisa.pdf" 
                    className="btn inline-flex items-center gap-2 bg-accent text-[#101C29] font-semibold px-8 py-3 rounded-lg hover:bg-accent-dark transition-colors btn-shadow">
                     <Download size={20}/> Unduh PDF
