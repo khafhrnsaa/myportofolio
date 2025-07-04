@@ -118,7 +118,7 @@ const HomeSection = () => {
                         <a href="#portfolio" className="btn inline-flex items-center gap-2 bg-transparent border-2 border-accent text-accent font-semibold px-6 py-3 rounded-lg hover:bg-accent hover:text-[#101C29] transition-colors">
                             <Briefcase size={20}/> Explore My Project
                         </a>
-                        <a href="/Portfolio_Kharisma Fahrun Nisa.pdf" download="Portfolio - Kharisma Fahrun Nisa.pdf" className="btn inline-flex items-center gap-2 bg-accent text-[#101C29] font-semibold px-6 py-3 rounded-lg hover:bg-accent-dark transition-colors btn-shadow">
+                        <a href="/Portofolio_Kharisma Fahrun Nisa.pdf" download="Portfolio - Kharisma Fahrun Nisa.pdf" className="btn inline-flex items-center gap-2 bg-accent text-[#101C29] font-semibold px-6 py-3 rounded-lg hover:bg-accent-dark transition-colors btn-shadow">
                             <Download size={20}/> Download CV
                         </a>
                     </div>
@@ -310,10 +310,10 @@ const DownloadPortfolioSection = () => (
         <div className="w-full max-w-xl bg-[#0A1C3D] p-6 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-1/3 flex-shrink-0">
                 {/* Ganti 'src' dengan path ke screenshot PDF Anda */}
-                <img src="/portfolio-preview.png" 
+                <img src="/preview.png" 
                      alt="Pratinjau Portofolio PDF" 
                      className="rounded-md w-full h-auto object-cover border-2 border-gray-700"
-                     onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/300x420/0A1C3D/ededed?text=Pratinjau+PDF'; }}/>
+                     onError={(e) => { e.target.onerror = null; e.target.src=''; }}/>
             </div>
             <div className="flex-grow text-center md:text-left">
                 <h3 className="text-2xl font-bold text-white flex items-center gap-3 mb-4"><FileText/> Portfolio Lengkap</h3>
