@@ -3,7 +3,7 @@ import {
     Home, User, Briefcase, MessageSquareText, Mail, Linkedin, Github, Download, 
     ChevronRight, Menu, X, ArrowUp, Plus, Heart, Quote, Star, Code, Database, 
     GitBranch, Network, FileSearch, Monitor, BarChart2, Award, Phone, GraduationCap, 
-    UserCircle, Paperclip, Send, Building, Users, ShieldCheck, MessageCircle
+    UserCircle, Paperclip, Send, Building, Users, ShieldCheck, MessageCircle, FileText
 } from 'lucide-react';
 
 // --- Data untuk Portfolio ---
@@ -43,7 +43,7 @@ const Header = ({ activeSection }) => {
 
     return (
         <header className="fixed top-0 left-0 w-full px-4 sm:px-8 md:px-16 py-4 flex justify-between items-center z-50 transition-shadow duration-300 bg-[#101C29] shadow-lg">
-            <a href="#home" className="text-2xl font-bold text-white"></a>
+            <a href="#home" className="text-2xl font-bold text-white">Kharisma.</a>
             {/* Desktop Nav */}
             <nav className="hidden md:flex space-x-2">
                 {navLinks.map(link => (
@@ -80,7 +80,6 @@ const HomeSection = () => {
     const typedEl = useRef(null);
 
     useEffect(() => {
-        // Check if Typed is loaded on the window object
         if (window.Typed) {
             const typed = new window.Typed(typedEl.current, {
                 strings: ['Software Development', 'Cybersecurity Enthusiast', 'Data Analyst'],
@@ -89,7 +88,6 @@ const HomeSection = () => {
                 backDelay: 1000,
                 loop: true
             });
-            // Destroy Typed instance on component unmount
             return () => {
                 if(typed) typed.destroy();
             };
@@ -120,8 +118,8 @@ const HomeSection = () => {
                         <a href="#portfolio" className="btn inline-flex items-center gap-2 bg-transparent border-2 border-accent text-accent font-semibold px-6 py-3 rounded-lg hover:bg-accent hover:text-[#101C29] transition-colors">
                             <Briefcase size={20}/> Explore My Project
                         </a>
-                        <a href="https://its.id/m/CVRUNNIE" target="_blank" rel="noopener noreferrer" className="btn inline-flex items-center gap-2 bg-accent text-[#101C29] font-semibold px-6 py-3 rounded-lg hover:bg-accent-dark transition-colors btn-shadow">
-                            <Download size={20}/> Download My CV
+                        <a href="/Portfolio Runnie.pdf" download="Portfolio - Kharisma Fahrun Nisa.pdf" className="btn inline-flex items-center gap-2 bg-accent text-[#101C29] font-semibold px-6 py-3 rounded-lg hover:bg-accent-dark transition-colors btn-shadow">
+                            <Download size={20}/> Download CV
                         </a>
                     </div>
                 </div>
@@ -302,9 +300,38 @@ const TestimonialsSection = () => (
     </section>
 );
 
+// --- SEKSI BARU: DOWNLOAD PORTFOLIO ---
+const DownloadPortfolioSection = () => (
+    <section id="download-portfolio" className="flex flex-col justify-center items-center px-4 sm:px-8 md:px-16 lg:px-24 py-20">
+        <div className="text-center">
+            <h2 className="text-4xl font-bold mb-2 text-white">My Creative <span className="text-accent">Portfolio</span></h2>
+            <p className="text-gray-300 mb-12 max-w-2xl">Lihat ringkasan visual dari perjalanan, proyek, dan keahlian saya dalam satu dokumen yang mudah dibagikan. Unduh sekarang.</p>
+        </div>
+        <div className="w-full max-w-xl bg-[#0A1C3D] p-6 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-8">
+            <div className="md:w-1/3 flex-shrink-0">
+                {/* Ganti 'src' dengan path ke screenshot PDF Anda */}
+                <img src="/portfolio-preview.png" 
+                     alt="Pratinjau Portofolio PDF" 
+                     className="rounded-md w-full h-auto object-cover border-2 border-gray-700"
+                     onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/300x420/0A1C3D/ededed?text=Pratinjau+PDF'; }}/>
+            </div>
+            <div className="flex-grow text-center md:text-left">
+                <h3 className="text-2xl font-bold text-white flex items-center gap-3 mb-4"><FileText/> Portfolio Lengkap</h3>
+                <p className="text-gray-400 mb-6">Dapatkan versi PDF dari portofolio saya untuk referensi offline atau untuk dibagikan dengan tim Anda.</p>
+                <a href="/Portfolio Runnie.pdf" 
+                   download="Portfolio - Kharisma Fahrun Nisa.pdf" 
+                   className="btn inline-flex items-center gap-2 bg-accent text-[#101C29] font-semibold px-8 py-3 rounded-lg hover:bg-accent-dark transition-colors btn-shadow">
+                    <Download size={20}/> Unduh PDF
+                </a>
+            </div>
+        </div>
+    </section>
+);
+
+
 // --- Komponen Contact ---
 const ContactSection = ({ onSupportClick }) => (
-    <section id="contact" className="min-h-screen flex flex-col justify-center items-center px-4 sm:px-8 md:px-16 lg:px-24 py-20">
+    <section id="contact" className="min-h-screen flex flex-col justify-center items-center px-4 sm:px-8 md:px-16 lg:px-24 py-20 bg-[#0A1C3D]">
         <div className="text-center">
             <h2 className="text-4xl font-bold mb-2 text-white">Contact Me</h2>
             <p className="text-gray-400 mb-8">Reach out via form, social media, or support platforms.</p>
@@ -320,43 +347,41 @@ const ContactSection = ({ onSupportClick }) => (
         <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-1 space-y-8">
                 {/* Contact Cards */}
-                <a href="https://github.com/khafhrnsaa" target="_blank" rel="noopener noreferrer" className="contact-card bg-[#0A1C3D] p-6 rounded-lg flex items-center justify-between transition-transform hover:-translate-y-1">
+                <a href="https://github.com/khafhrnsaa" target="_blank" rel="noopener noreferrer" className="contact-card bg-[#101C29] p-6 rounded-lg flex items-center justify-between transition-transform hover:-translate-y-1">
                     <div>
                         <h3 className="text-xl font-bold flex items-center gap-3 text-white"><Github/> GitHub</h3>
                         <p className="text-gray-400">Explore my code & projects</p>
                     </div>
                     <ChevronRight className="text-white"/>
                 </a>
-                 <a href="https://linkedin.com/in/khafhrnsaa" target="_blank" rel="noopener noreferrer" className="contact-card bg-[#0A1C3D] p-6 rounded-lg flex items-center justify-between transition-transform hover:-translate-y-1">
+                 <a href="https://linkedin.com/in/khafhrnsaa" target="_blank" rel="noopener noreferrer" className="contact-card bg-[#101C29] p-6 rounded-lg flex items-center justify-between transition-transform hover:-translate-y-1">
                     <div>
                         <h3 className="text-xl font-bold flex items-center gap-3 text-white"><Linkedin/> LinkedIn</h3>
                         <p className="text-gray-400">Let's connect professionally</p>
                     </div>
                     <ChevronRight className="text-white"/>
                 </a>
-                {/* --- KARTU KONTAK BARU --- */}
-                <a href="mailto:gaharuearn@gmail.com" className="contact-card bg-[#0A1C3D] p-6 rounded-lg flex items-center justify-between transition-transform hover:-translate-y-1">
+                <a href="mailto:gaharuearn@gmail.com" className="contact-card bg-[#101C29] p-6 rounded-lg flex items-center justify-between transition-transform hover:-translate-y-1">
                     <div>
                         <h3 className="text-xl font-bold flex items-center gap-3 text-white"><Mail/> Email</h3>
                         <p className="text-gray-400">Send me an email directly</p>
                     </div>
                     <ChevronRight className="text-white"/>
                 </a>
-                <a href="https://wa.me/6281239362587" target="_blank" rel="noopener noreferrer" className="contact-card bg-[#0A1C3D] p-6 rounded-lg flex items-center justify-between transition-transform hover:-translate-y-1">
+                <a href="https://wa.me/6281239362587" target="_blank" rel="noopener noreferrer" className="contact-card bg-[#101C29] p-6 rounded-lg flex items-center justify-between transition-transform hover:-translate-y-1">
                     <div>
                         <h3 className="text-xl font-bold flex items-center gap-3 text-white"><MessageCircle/> WhatsApp</h3>
                         <p className="text-gray-400">Chat with me</p>
                     </div>
                     <ChevronRight className="text-white"/>
                 </a>
-                {/* --- AKHIR KARTU KONTAK BARU --- */}
             </div>
-            <div id="contact-form" className="lg:col-span-2 bg-[#0A1C3D] p-8 rounded-lg">
+            <div id="contact-form" className="lg:col-span-2 bg-[#101C29] p-8 rounded-lg">
                 <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 text-white"><Send/> Send Me a Message</h3>
                 <form action="#" className="space-y-6">
-                    <input type="text" placeholder="Your Name" className="w-full p-3 bg-[#101C29] rounded-lg border border-transparent focus:border-accent focus:outline-none text-white"/>
-                    <input type="email" placeholder="Your Email" className="w-full p-3 bg-[#101C29] rounded-lg border border-transparent focus:border-accent focus:outline-none text-white"/>
-                    <textarea placeholder="Your Message" rows="5" className="w-full p-3 bg-[#101C29] rounded-lg border border-transparent focus:border-accent focus:outline-none text-white"></textarea>
+                    <input type="text" placeholder="Your Name" className="w-full p-3 bg-[#0A1C3D] rounded-lg border border-transparent focus:border-accent focus:outline-none text-white"/>
+                    <input type="email" placeholder="Your Email" className="w-full p-3 bg-[#0A1C3D] rounded-lg border border-transparent focus:border-accent focus:outline-none text-white"/>
+                    <textarea placeholder="Your Message" rows="5" className="w-full p-3 bg-[#0A1C3D] rounded-lg border border-transparent focus:border-accent focus:outline-none text-white"></textarea>
                     <div className="text-right">
                         <button type="submit" className="btn bg-accent text-[#101C29] font-semibold px-8 py-3 rounded-lg hover:bg-accent-dark transition-colors btn-shadow">Send Message</button>
                     </div>
@@ -486,6 +511,7 @@ export default function App() {
                 <AboutSection />
                 <PortfolioSection />
                 <TestimonialsSection />
+                <DownloadPortfolioSection /> {/* <-- SEKSI BARU DITAMBAHKAN DI SINI */}
                 <ContactSection onSupportClick={() => setIsModalOpen(true)} />
             </main>
             <Footer />
