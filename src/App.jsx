@@ -23,11 +23,11 @@ const portfolioItemsData = [
     { id: 11, category: 'projects', title: 'Sales Data Analysis', description: 'Analyzed 10,000+ rows of sales data with Python (Pandas, NumPy) to improve data quality by 25%.' },
     { id: 12, category: 'projects', title: 'Process Scheduling Simulation', description: 'Implemented FCFS and SJF algorithms in Python for CPU process management simulation, reducing wait time by up to 40%.' },
     // Certificates
-    { id: 13, category: 'certificates', image: 'sertifikat diklat kpk.png', title: 'Student Integrity Enhancement', link: '#' },
+    { id: 13, category: 'certificates', image: '/sertifikat diklat kpk.png', title: 'Student Integrity Enhancement', link: '#' },
     { id: 14, category: 'certificates', image: 'https://placehold.co/600x420/0A1C3D/ededed?text=Sertifikat+Lain', title: 'Other Certificate', link: '#' },
     // Trainings
-    { id: 15, category: 'trainings', image: 'sertifikat p3h.png', title: 'Halal Product Process Assistance Training', link: '#' },
-    { id: 16, category: 'trainings', image: 'sertifikat lkmm TD.png', title: 'LKMM-TD HMIT V', link: '#' },
+    { id: 15, category: 'trainings', image: '/sertifikat p3h.png', title: 'Halal Product Process Assistance Training', link: '#' },
+    { id: 16, category: 'trainings', image: '/sertifikat lkmm TD.png', title: 'LKMM-TD HMIT V', link: '#' },
 ];
 
 // --- Komponen Header ---
@@ -177,7 +177,7 @@ const AboutSection = () => (
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start w-full">
             <div className="flex justify-center">
-                <img src="profile.jpg" alt="About Kharisma" className="rounded-lg w-full max-w-sm h-auto object-cover" />
+                <img src="/profile.jpg" alt="About Kharisma" className="rounded-lg w-full max-w-sm h-auto object-cover" />
             </div>
             <div className="space-y-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
